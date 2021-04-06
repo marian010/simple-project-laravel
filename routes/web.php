@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes([
+    'register' => false
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/company/create', 'Company\CompanyController@index')->name('company.create');
+
+Route::post('/company/create', 'Company\CompanyController@create')->name('company.create');
