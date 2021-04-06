@@ -8,6 +8,11 @@ use App\Company;
 
 class CompanyController extends Controller
 {
+    public function viewCreateCompany()
+    {
+        return view('company.create');
+    }
+    
     public function create(Request $request)
     {
         $company = Company::create([
@@ -25,8 +30,10 @@ class CompanyController extends Controller
         return redirect()->route('home');
     }
 
-    public function index()
+    public function viewEditPage($id)
     {
-        return view('company.create');
+        $company = Company::findOrFail($id);
+
+        return view('company.edit', compact('company'));
     }
 }
