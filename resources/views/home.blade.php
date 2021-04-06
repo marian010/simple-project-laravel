@@ -29,7 +29,7 @@
                                         <td>{{ $company->name }}</td>
                                         <td>{{ $company->website }}</td>
                                         <td>{{ $company->email }}</td>
-                                        <th><a href="javascript:void(0)" class="btn btn-light btn-sm">Edit</a><br><a href="javaascript:void(0)" class="btn btn-danger btn-sm">Delete</a></th>
+                                        <th><a href="{{ route('company.edit', $company->id) }}" class="btn btn-light btn-sm">Edit</a><br><a href="javaascript:void(0)" class="btn btn-danger btn-sm">Delete</a></th>
                                     </tr>
                                 @endforeach
                                 </tbody>

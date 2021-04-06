@@ -22,6 +22,8 @@ Auth::routes([
 ]);
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/company/create', 'Company\CompanyController@index')->name('company.create');
 
+Route::get('/company/edit/{id}', 'Company\CompanyController@viewEditPage')->name('company.edit');
+
+Route::get('/company/create', 'Company\CompanyController@viewCreateCompany')->name('company.create');
 Route::post('/company/create', 'Company\CompanyController@create')->name('company.create');
