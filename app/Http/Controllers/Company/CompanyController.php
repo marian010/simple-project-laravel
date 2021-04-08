@@ -45,7 +45,6 @@ class CompanyController extends Controller
         return view('company.edit', compact('company'));
     }
 
-
     public function destroy(Company $company, $id)
     {
         $company = Company::findOrFail($id);
