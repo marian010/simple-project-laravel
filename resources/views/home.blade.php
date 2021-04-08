@@ -9,6 +9,7 @@
 
                 <div class="card-body">
                     <p class="card-text">You are logged in as {{ Auth::user()->name }}</p>
+                    <p class="card-text">There are {{ App\Company::count() }} companies and {{ App\Employee::count() }} employers</p>
                 </div>
             </div>
         </div>
