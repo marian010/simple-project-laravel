@@ -12,6 +12,6 @@ Simple Laravel Project based on <a href="https://www.youtube.com/channel/UCTuplg
 <li>Store companies logos in <b>storage/app/public</b> folder and make them accessible from public ✅</li> 
 <li>Use basic Laravel resource controllers with default methods – index, create, store etc. ✅</li> 
 <li>Use Laravel’s validation function, using Request classes</li>
-<li>Use Laravel’s pagination for showing Companies/Employees list, 10 entries per page</li>
+<li>Use Laravel’s pagination for showing Companies/Employees list, 10 entries per page✅</li>
 <li>Use Laravel <b>make:auth</b> as default Bootstrap-based design theme, but remove ability to register ✅</li> 
 </ul>
