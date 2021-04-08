@@ -5,9 +5,17 @@ namespace App\Http\Controllers\Company;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Company;
+use DB;
 
 class CompanyController extends Controller
 {
+    public function viewCompanies()
+    {
+        $companies = Company::paginate(10);
+
+        return view('company.list', compact('companies'));
+    }
+    
     public function viewCreateCompany()
     {
         return view('company.create');
@@ -27,7 +35,7 @@ class CompanyController extends Controller
             $company->update(['logo' => $logo]);
         }
 
-        return redirect()->route('home');
+        return redirect()->route('company.list');
     }
 
     public function viewEditPage($id)
@@ -35,5 +43,14 @@ class CompanyController extends Controller
         $company = Company::findOrFail($id);
 
         return view('company.edit', compact('company'));
+    }
+
+
+    public function destroy(Company $company, $id)
+    {
+        $company = Company::findOrFail($id);
+        $company->delete();
+
+        return view('home');
     }
 }
