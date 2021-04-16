@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes([
     'register' => false
 ]);
-
+Route::middleware(['auth'])->group(function () {
 Route::get('/home',                     'HomeController@index')->name('home');
 
 Route::get('/employe',                  'Employee\EmployeeController@index')->name('employee.index');
@@ -38,3 +38,4 @@ Route::post('/company/edit/{id}',       'Company\CompanyController@update')->nam
 
 Route::get('/company/create',           'Company\CompanyController@viewCreateCompany')->name('company.create');
 Route::post('/company/create',          'Company\CompanyController@create')->name('company.create');
+});
