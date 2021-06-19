@@ -36,6 +36,7 @@ class EmployeeController extends Controller
         Employee::create([
             'first_name'        => $request->input('first_name'),
             'last_name'         => $request->input('last_name'),
+            'phone_number'      => $request->input('phone_number'),
             'email'             => $request->input('email'),
             'company_id'        => $request->input('company')
         ]);
